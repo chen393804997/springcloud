@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: eureka-server
+server:
+  port: 1111
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: true #是否注册自己
+    fetch-registry: true #是否需要去检索实例
+    registry-fetch-interval-seconds: 15   # 设置拉取服务注册信息时间 ，默认为60s（如果需要迅速获取服务注册状态，可以缩小该值，比如：网关接口启动需马上调用）
+    serviceUrl:
+      defaultZone: http://localhost:1112/eureka/
+    healthcheck:
+      enabled: true
